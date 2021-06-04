@@ -10,3 +10,7 @@ class Animal:
 
     def add_treatment_notes(self, notes):
         self.treatment_notes.append(notes)
+
+
+    def assign_vet(self, vet):
+        self.current_vet = vet
