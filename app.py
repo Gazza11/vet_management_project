@@ -1,8 +1,11 @@
 from flask import Flask, render_template
 
+from controllers.vet_controller import vets_blueprint
 
 
 app = Flask(__name__)
+
+app.register_blueprint(vets_blueprint)
 
 @app.route('/')
 def home():

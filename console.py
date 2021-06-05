@@ -25,10 +25,10 @@ animal_repository.update(animal1)
 
 # print(vet_repository.select_by_id(23))
 
-# print(animal_repository.select_by_id(4))
+# print(animal_repository.select_by_id(45).treatment_notes)
 
-for animal in animal_repository.select_all_animals():
-    print(animal.__dict__)
+# for animal in animal_repository.select_all_animals():
+#     print(animal.__dict__)
 
 
 pdb.set_trace()

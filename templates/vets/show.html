@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{vet.last_name}}, {{vet.first_name}}</h2>
+
+<section>
+    <p>Works on: {{vet.working_days}}</p>
+    <p>D.o.B: {{vet.date_of_birth}}</p>
+</section>
+
+{% endblock %}

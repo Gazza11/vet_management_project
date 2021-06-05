@@ -20,11 +20,12 @@ CREATE TABLE animals (
 );
 
 -- Below used for testing.
--- INSERT INTO vets (first_name, last_name, working_days, date_of_birth) VALUES ('Troy', 'Barker', 'Mon, Tues', '07/09/1998');
--- INSERT INTO vets (first_name, last_name, working_days, date_of_birth) VALUES ('Abed', 'Tanner', 'Mon, Weds', '07/09/1978');
+INSERT INTO vets (first_name, last_name, working_days, date_of_birth) VALUES ('Troy', 'Barker', 'Mon, Tues', '07/09/1998');
+INSERT INTO vets (first_name, last_name, working_days, date_of_birth) VALUES ('Abed', 'Tanner', 'Mon, Weds', '07/09/1978');
 
 
--- INSERT INTO animals (name, date_of_birth, animal_type, owner_number) VALUES ('Garfield', '00', 'cat', 000);
+INSERT INTO animals (name, date_of_birth, animal_type, owner_number) VALUES ('Garfield', '00', 'cat', 000);
+UPDATE animals SET (treatment_notes) VALUES ('Garfield needs to lose weight');
 
--- SELECT * FROM vets;
--- SELECT * FROM animals;
+SELECT * FROM vets;
+SELECT * FROM animals;
