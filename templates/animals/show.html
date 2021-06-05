@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Name: {{animal.name}} - Current Vet: {{animal.current_vet.last_name}}, {{animal.current_vet.first_name}}</h2>
+
+<section>
+    <p>Type of Animal: {{animal.animal_type}}</p>
+    <p>D.o.B: {{animal.date_of_birth}}</p>
+</section>
+{% for note in animal.treatment_notes %}
+<section>
+    <p>{{animal.treatment_notes}}</p>
+</section>
+{% endfor %}
+
+{% endblock %}

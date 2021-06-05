@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Our Animals</h1>
+
+<section>
+    {% for animal in animals %}
+    <h4><a href="/animals/{{ animal.id }}">{{animal.name}}</a></h4>
+    <section>
+        <p>type: {{animal.animal_type}}</p>
+        <p>D.o.B: {{animal.date_of_birth}}</p>
+        <p>Owner Number: {{animal.owner_number}}</p>
+    </section>
+    {% endfor %}
+</section>
+
+{% endblock %}

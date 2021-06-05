@@ -15,7 +15,7 @@ CREATE TABLE animals (
     date_of_birth VARCHAR(255),
     animal_type VARCHAR(255),
     owner_number INT,
-    treatment_notes VARCHAR(255),
+    treatment_notes TEXT,
     current_vet_id INT REFERENCES vets(id) ON DELETE CASCADE
 );
 
@@ -24,8 +24,11 @@ INSERT INTO vets (first_name, last_name, working_days, date_of_birth) VALUES ('T
 INSERT INTO vets (first_name, last_name, working_days, date_of_birth) VALUES ('Abed', 'Tanner', 'Mon, Weds', '07/09/1978');
 
 
-INSERT INTO animals (name, date_of_birth, animal_type, owner_number) VALUES ('Garfield', '00', 'cat', 000);
-UPDATE animals SET (treatment_notes) VALUES ('Garfield needs to lose weight');
+INSERT INTO animals (name, date_of_birth, animal_type, owner_number, treatment_notes, current_vet_id) VALUES ('Garfield', '07/08/2019', 'cat', 589668, 'Garfield needs to lose weight.', 1);
+INSERT INTO animals (name, date_of_birth, animal_type, owner_number, treatment_notes, current_vet_id) VALUES ('George', '14/07/2020', 'monkey', 789422, 'George is very Curious.', 1);
+INSERT INTO animals (name, date_of_birth, animal_type, owner_number, treatment_notes, current_vet_id) VALUES ('Gregor', '02/03/2008', 'dog', 889026, 'Gregor needs a course of anti-biotics.', 2);
+INSERT INTO animals (name, date_of_birth, animal_type, owner_number, treatment_notes, current_vet_id) VALUES ('Emily', '23/09/2009', 'cat', 778009, 'In good health.', 1);
+
 
 SELECT * FROM vets;
 SELECT * FROM animals;
