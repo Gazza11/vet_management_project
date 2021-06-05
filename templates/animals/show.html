@@ -7,10 +7,9 @@
     <p>Type of Animal: {{animal.animal_type}}</p>
     <p>D.o.B: {{animal.date_of_birth}}</p>
 </section>
-{% for note in animal.treatment_notes %}
+
 <section>
-    <p>{{animal.treatment_notes}}</p>
+    {{animal.treatment_notes}}
 </section>
-{% endfor %}
 
 {% endblock %}
