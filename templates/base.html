@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vet Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1><a href="/">The Vet Helper</a></h1>
+        <section>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="/">Display Records</a></li>
+                    <li><a href="/">Create New Record</a></li>
+                    <li><a href="/">Search for Record</a></li>
+                    <li><a href="/">Display All Vets</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>
