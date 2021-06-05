@@ -16,5 +16,14 @@ CREATE TABLE animals (
     animal_type VARCHAR(255),
     owner_number INT,
     treatment_notes VARCHAR(255),
-    current_vet_id SERIAL REFERENCES vets(id)
+    current_vet_id INT REFERENCES vets(id)
 );
+
+INSERT INTO vets (first_name, last_name, working_days, date_of_birth) VALUES ('Troy', 'Barker', 'Mon, Tues', '07/09/1998');
+INSERT INTO vets (first_name, last_name, working_days, date_of_birth) VALUES ('Abed', 'Tanner', 'Mon, Weds', '07/09/1978');
+
+
+INSERT INTO animals (name, date_of_birth, animal_type, owner_number) VALUES ('Garfield', '00', 'cat', 000);
+
+SELECT * FROM vets;
+SELECT * FROM animals;
