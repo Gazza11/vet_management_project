@@ -19,10 +19,10 @@ def select_by_id(id):
     
     sql = "SELECT * FROM vets WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)[0]
+    results = run_sql(sql, values)[0]
 
-    if result is not None:
-        vet = Vet(result['first_name'], result['last_name'], result['working_days'], result['date_of_birth'], result['id'])
+    if results is not None:
+        vet = Vet(results['first_name'], results['last_name'], results['working_days'], results['date_of_birth'], results['id'])
     
     return vet
 
@@ -32,9 +32,9 @@ def select_all_vets():
     vets = []
 
     sql = "SELECT * FROM vets"
-    result = run_sql(sql)
+    results = run_sql(sql)
 
-    for row in result:
+    for row in results:
         vet = Vet(row['first_name'], row['last_name'], row['working_days'], row['date_of_birth'], row['id'])
         vets.append(vet)
     return vets

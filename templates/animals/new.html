@@ -12,19 +12,22 @@
         <input type="date" name="date_of_birth" id="date_of_birth">
     </div>
     <div>
+        <label for="animal_type">Type of animal:</label>
+        <input type="text" name="animal_type" id="animal_type">
+    </div>
+    <div>
         <label for="owner_number">Owner's Number:</label>
-        <input type="tel" name="owners_number" id="owners_number" pattern="[0-9]{5}-[0-9]{6}" required>
-        <small>Example: 12345-678900</small>
+        <input type="tel" name="owners_number" id="owners_number">
     </div>
     <div>
         <label for="treatment_notes">Vets initial notes:</label>
         <textarea name="treatment_notes" id="treatment_notes" cols="20" rows="5"></textarea>
     </div>
     <div>
-        <label for="vet">Which vet are they assigned to:</label>
-        <select name="current_vet" id="current_vet">
-            {% for vet in vets%}
-            <option value="{{ vet.id}}">
+        <label for="current_vet">Which vet are they assigned to:</label>
+        <select name="current_vet_id" id="current_vet">
+            {% for vet in vets %}
+            <option value="{{ vet.id }}">
                 {{vet.last_name}}, {{vet.first_name}}
             </option>
             {% endfor %}

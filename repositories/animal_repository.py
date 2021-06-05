@@ -20,9 +20,9 @@ def select_all_animals():
     animals = []
 
     sql = "SELECT * FROM animals"
-    result = run_sql(sql)
+    results = run_sql(sql)
 
-    for row in result:
+    for row in results:
         vet = vet_repository.select_by_id(row['current_vet_id'])
         animal = Animal(row['name'], row['date_of_birth'], row['animal_type'], row['owner_number'], row['treatment_notes'], vet, row['id'])
         animals.append(animal)
@@ -35,11 +35,11 @@ def select_by_id(id):
 
     sql = "SELECT * FROM animals WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)[0]
+    results = run_sql(sql, values)[0]
 
-    if result is not None:
-        vet = vet_repository.select_by_id(result['current_vet_id'])
-        animal = Animal(result['name'], result['date_of_birth'], result['animal_type'], result['owner_number'], result['treatment_notes'], vet, result['id'])
+    if results is not None:
+        vet = vet_repository.select_by_id(results['current_vet_id'])
+        animal = Animal(results['name'], results['date_of_birth'], results['animal_type'], results['owner_number'], results['treatment_notes'], vet, results['id'])
     return animal
 
 
