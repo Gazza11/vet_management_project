@@ -11,6 +11,10 @@ vet_repository.save_vet(vet1)
 vet2 = Vet('Britta', 'Perry', 'Fri, Sat, Sun', '01/03/1992')
 vet_repository.save_vet(vet2)
 
+for vet in vet_repository.select_all_vets():
+    print(vet.__dict__)
+
+
 
 
 
