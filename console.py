@@ -31,9 +31,4 @@ for animal in animal_repository.select_all_animals():
     print(animal.__dict__)
 
 
-
-
-
-
-
 pdb.set_trace()

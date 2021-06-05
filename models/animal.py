@@ -9,9 +9,11 @@ class Animal:
         self.id = id
 
 
+# Function adds treatment notes to the animal profile
     def add_treatment_notes(self, notes):
         self.treatment_notes.append(notes)
 
 
+# Function assigns a vet to the animal profile. Will override last.
     def assign_vet(self, vet):
         self.current_vet = vet

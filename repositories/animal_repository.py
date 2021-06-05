@@ -5,6 +5,7 @@ from models.vet import Vet
 
 import repositories.vet_repository as vet_repository
 
+# Create animal profile
 def save_animal(animal):
     sql = "INSERT INTO animals (name, date_of_birth, animal_type, owner_number, current_vet_id) VALUES (%s, %s, %s, %s, %s) RETURNING *"
     values = [animal.name, animal.date_of_birth, animal.animal_type, animal.owner_number, animal.current_vet.id]
@@ -14,7 +15,7 @@ def save_animal(animal):
     return animal
 
 
-
+# Select all animal profiles
 def select_all_animals():
     animals = []
 
@@ -28,7 +29,7 @@ def select_all_animals():
     return animals
 
 
-
+# Select animal profile by id
 def select_by_id(id):
     animal = None
 
@@ -42,19 +43,20 @@ def select_by_id(id):
     return animal
 
 
-
+# Delete all animal profiles
 def delete_all():
     sql = "DELETE FROM animals"
     run_sql(sql)
 
 
+# Delete animal profile by id
 def delete_by_id(id):
     sql = "DELETE FROM animals WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
 
-
+# Update animal profile
 def update(animal):
     sql = "UPDATE animals SET (name, date_of_birth, animal_type, owner_number, treatment_notes, current_vet_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [animal.name, animal.date_of_birth, animal.animal_type, animal.owner_number, animal.treatment_notes, animal.current_vet.id, animal.id]
