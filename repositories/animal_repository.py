@@ -15,7 +15,39 @@ def save_animal(animal):
 
 
 
+def select_all_animals():
+    animals = []
+
+    sql = "SELECT * FROM animals"
+    result = run_sql(sql)
+
+    for row in result:
+        vet = vet_repository.select_by_id(row['current_vet_id'])
+        animal = Animal(row['name'], row['date_of_birth'], row['animal_type'], row['owner_number'], vet, row['id'])
+        animals.append(animal)
+    return animals
+
+
+
+def select_by_id(id):
+    animal = None
+
+    sql = "SELECT * FROM animals WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        vet = vet_repository.select_by_id(result['current_vet_id'])
+        animal = Animal(result['name'], result['date_of_birth'], result['animal_type'], result['owner_number'], vet, result['id'])
+    return animal
+
+
 
 def delete_all():
     sql = "DELETE FROM animals"
     run_sql(sql)
+
+def delete_by_id(id):
+    sql = "DELETE FROM animals WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

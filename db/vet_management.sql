@@ -16,7 +16,7 @@ CREATE TABLE animals (
     animal_type VARCHAR(255),
     owner_number INT,
     treatment_notes VARCHAR(255),
-    current_vet_id INT REFERENCES vets(id)
+    current_vet_id INT REFERENCES vets(id) ON DELETE CASCADE
 );
 
 -- Below used for testing.
