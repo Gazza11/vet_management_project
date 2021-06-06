@@ -8,4 +8,16 @@
     <p>D.o.B: {{vet.date_of_birth}}</p>
 </section>
 
+<section>
+    <form action="/vets/{{vet.id}}/edit">
+        <input type="submit" value="Edit">
+    </form>
+</section>
+
+<section>
+    <form action="/vets/{{ vet.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+</section>
+
 {% endblock %}

@@ -50,3 +50,27 @@ def create_animal_record():
 def delete_animal(id):
     animal_repository.delete_by_id(id)
     return redirect("/animals")
+
+
+# Edit animal record
+@animals_blueprint.route("/animals/<id>/edit")
+def edit_animal(id):
+    animal = animal_repository.select_by_id(id)
+    vets = vet_repository.select_all_vets()
+    return render_template('animals/edit.html', animal=animal, vets=vets)
+
+
+# Update animal record
+@animals_blueprint.route("/animals/<id>", methods=['POST'])
+def update_animal(id):
+    name = request.form["name"]
+    date_of_birth = request.form['date_of_birth']
+    animal_type = request.form['animal_type']
+    owner_number = request.form['owners_number']
+    treatment_notes = request.form['treatment_notes']
+    vet_id = request.form['current_vet_id']
+    current_vet = vet_repository.select_by_id(vet_id)
+    animal = Animal(name, date_of_birth, animal_type, owner_number, treatment_notes, current_vet, id)
+    animal_repository.update(animal)
+    return redirect("/animals")
+

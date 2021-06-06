@@ -56,5 +56,5 @@ def delete_by_id(id):
 # Update vet profile
 def update(vet):
     sql = "UPDATE vets SET (first_name, last_name, working_days, date_of_birth) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [vet.first_name, vet.last_name, vet.working_days, vet.date_of_birth]
+    values = [vet.first_name, vet.last_name, vet.working_days, vet.date_of_birth, vet.id]
     run_sql(sql, values)
