@@ -19,7 +19,7 @@ CREATE TABLE animals (
     current_vet_id INT REFERENCES vets(id) ON DELETE CASCADE
 );
 
--- Below used for testing.
+--Below is used for populating the database for example purposes.
 INSERT INTO vets (first_name, last_name, working_days, date_of_birth) VALUES ('Troy', 'Barker', 'Mon, Tues', '07/09/1998');
 INSERT INTO vets (first_name, last_name, working_days, date_of_birth) VALUES ('Abed', 'Tanner', 'Mon, Weds', '07/09/1978');
 
