@@ -13,9 +13,15 @@
 </section>
 
 <section>
+    <form action="/animals/{{animal.id}}/edit">
+        <input type="submit" value="Edit">
+    </form>
+</section>
+<section>
     <form action="/animals/{{ animal.id }}/delete" method="POST">
         <input type="submit" value="delete">
     </form>
 </section>
+
 
 {% endblock %}
