@@ -4,7 +4,7 @@
 <h2>
     Edit {{ vet.first_name}}'s profile
 </h2>
-<form action="/vets" method="POST">
+<form action="/vets/{{ vet.id }}" method="POST">
     <div>
         <label for="first_name">First name:</label>
         <input type="text" name="first_name" id="first_name" value="{{vet.first_name}}">
