@@ -22,7 +22,8 @@
     </div>
     <div>
         <label for="treatment_notes">Vets notes:</label>
-        <input type="text" name="treatment_notes" id="treatment_notes" value="{{ animal.treatment_notes }}">
+        <!-- <input type="text" name="treatment_notes" id="treatment_notes" value="{{ animal.treatment_notes }}"> -->
+        <textarea name="treatment_notes" id="treatment_notes" cols="30" rows="10">{{animal.treatment_notes}}</textarea>
     </div>
     <div>
         <label for="current_vet">Which vet are they assigned to:</label>
