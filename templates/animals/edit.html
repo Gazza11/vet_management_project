@@ -28,6 +28,7 @@
     <div>
         <label for="current_vet">Which vet are they assigned to:</label>
         <select name="current_vet_id" id="current_vet">
+            <option value="{{animal.current_vet.id}}">{{animal.current_vet.last_name}}, {{animal.current_vet.first_name}}</option>
             {% for vet in vets %}
             <option value="{{ vet.id }}">
                 {{vet.last_name}}, {{vet.first_name}}
