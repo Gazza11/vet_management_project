@@ -24,7 +24,7 @@ CREATE TABLE animals (
     name VARCHAR(255),
     date_of_birth VARCHAR(255),
     animal_type VARCHAR(255),
-    owner_number VARCHAR(255),
+    owner_details INT REFERENCES owners(id),
     treatment_notes TEXT,
     current_vet_id INT REFERENCES vets(id)
 );
@@ -40,10 +40,10 @@ INSERT INTO owners (name, number, address, postcode, registered) VALUES ('Stu Ch
 INSERT INTO owners (name, number, address, postcode, registered) VALUES ('Mike Trout', 272727, '27 Thistle Drive', 'AB27 6WB', false);
 
 
-INSERT INTO animals (name, date_of_birth, animal_type, owner_number, treatment_notes, current_vet_id) VALUES ('Garfield', '2019-08-07', 'cat', 589668, 'Garfield needs to lose weight.', 1);
-INSERT INTO animals (name, date_of_birth, animal_type, owner_number, treatment_notes, current_vet_id) VALUES ('George', '2020-07-14', 'monkey', 789422, 'George is very Curious.', 1);
-INSERT INTO animals (name, date_of_birth, animal_type, owner_number, treatment_notes, current_vet_id) VALUES ('Gregor', '2008-03-02', 'dog', 889026, 'Gregor needs a course of anti-biotics.', 2);
-INSERT INTO animals (name, date_of_birth, animal_type, owner_number, treatment_notes, current_vet_id) VALUES ('Emily', '2009-03-02', 'cat', 778009, 'In good health.', 1);
+INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Garfield', '2019-08-07', 'cat', 1, 'Garfield needs to lose weight.', 1);
+INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('George', '2020-07-14', 'monkey', 2, 'George is very Curious.', 1);
+INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Gregor', '2008-03-02', 'dog', 4, 'Gregor needs a course of anti-biotics.', 2);
+INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Emily', '2009-03-02', 'cat', 3, 'In good health.', 1);
 
 
 -- SELECT * FROM vets;
