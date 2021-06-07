@@ -32,4 +32,25 @@ def create_owner():
     registered = True
     new_owner = Owner(name, number, address, postcode, registered)
     owner_repository.save_owner(new_owner)
+    return redirect("/animals/new")
+
+@owners_blueprint.route("/owners/<id>/delete", methods=['POST'])
+def delete_owner(id):
+    owner = owner_repository.delete(id)
+    return redirect("/owners")
+
+@owners_blueprint.route("/owners/<id>/edit")
+def edit_owner(id):
+    owner = owner_repository.select_by_id(id)
+    return render_template("/owners/edit.html", owner=owner)
+
+@owners_blueprint.route("/owners/<id>", methods=['POST'])
+def update_owner(id):
+    name = request.form['name']
+    number = request.form['number']
+    address = request.form['address']
+    postcode = request.form['postcode']
+    registered = True
+    new_owner = Owner(name, number, address, postcode, registered)
+    owner_repository.save_owner(new_owner)
     return redirect("/owners")

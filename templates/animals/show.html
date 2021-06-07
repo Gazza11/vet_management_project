@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Name: {{animal.name}} - Current Vet: {{animal.current_vet.last_name}}, {{animal.current_vet.first_name}}</h2>
+<h2>Name: {{animal.name}} - Current Vet: <a href="/vets/{{animal.current_vet.id}}">{{animal.current_vet.last_name}}, {{animal.current_vet.first_name}}</a></h2>
 
 <section>
     <p>Type of Animal: {{animal.animal_type}}</p>
