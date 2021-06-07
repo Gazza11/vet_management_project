@@ -1,0 +1,36 @@
+.show-animal {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 12px;
+}
+
+.show-animal h3 {
+    margin-top: 12px;
+    text-decoration: underline;
+}
+
+.show-animal p {
+    margin-top: 8px;
+}
+
+.show-animal a {
+    text-decoration: None;
+    color: black;
+}
+
+.show-animal-header a {
+    text-decoration: None;
+}
+
+.show-animal-button {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.show-animal-button form {
+    padding-left: 0px;
+}

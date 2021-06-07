@@ -1,35 +1,48 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Name: {{animal.name}} - Current Vet: <a href="/vets/{{animal.current_vet.id}}">{{animal.current_vet.last_name}}, {{animal.current_vet.first_name}}</a></h2>
 
-<section>
-    <p>Type of Animal: {{animal.animal_type}}</p>
-    <p>D.o.B: {{animal.date_of_birth}}</p>
+<h2 class="show-animal-header">Name: {{animal.name}} - Current Vet: <a href="/vets/{{animal.current_vet.id}}">{{animal.current_vet.last_name}}, {{animal.current_vet.first_name}}</a></h2>
+<section class="show-animal">
+    <div>
+        <section>
+            <h3>Animal Details</h3>
+            <p>Type of Animal: {{animal.animal_type}}</p>
+            <p>D.o.B: {{animal.date_of_birth}}</p>
+        </section>
+        <br>
+        <section>
+            <h4>Treatment Notes</h4>
+            {{animal.treatment_notes}}
+        </section>
+    </div>
+        <br>
+        <br>
+        <section>
+            <h3>Owner Details</h3>
+            <p>Owner Name: {{animal.owner_details.name}}</p>
+            <p>Contact Number: {{animal.owner_details.number}}</p>
+            <p>Address: {{animal.owner_details.address}}, {{animal.owner_details.postcode}}</p>
+            <p></p>
+        </section>
+    <div class="show-animal-button">
+        <section>
+            <button><a href="/vets/{{animal.current_vet.id}}">View Vet</a></button>
+        </section>
+        <br>
+        <section>
+            <form action="/animals/{{animal.id}}/edit">
+                <input type="submit" value="Edit">
+            </form>
+        </section>
+        <br>
+        <section>
+            <form action="/animals/{{ animal.id }}/delete" method="POST">
+                <input type="submit" value="Delete">
+            </form>
+        </section>
+        <br>
+    </div>    
 </section>
-<br>
-<section>
-    <h3>Owner Details</h3>
-    <p>Owner Name: {{animal.owner_details.name}}</p>
-    <p>Number: {{animal.owner_details.number}}</p>
-    <p>Address: {{animal.owner_details.address}} <br>{{animal.owner_details.postcode}}</p>
-    <p></p>
-</section>
-
-<section>
-    {{animal.treatment_notes}}
-</section>
-
-<section>
-    <form action="/animals/{{animal.id}}/edit">
-        <input type="submit" value="Edit">
-    </form>
-</section>
-<section>
-    <form action="/animals/{{ animal.id }}/delete" method="POST">
-        <input type="submit" value="delete">
-    </form>
-</section>
-
 
 {% endblock %}

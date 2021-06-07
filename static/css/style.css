@@ -1,18 +1,44 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+
+body p {
+    padding-left: 5px;
+}
+
+body h3 {
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+body h1 {
+    padding-left: 5px;
+}
+
+body h2 {
+    padding-left: 5px;
+}
+
+body form {
+    padding-left: 5px;
 }
 
 .main-header {
     display: flex;
     justify-content: space-between;
     font-size: larger;
-    background-color: coral;
+    background-color: #5cdb95;
     margin: 0px;
 }
 
 header a {
     text-decoration: none;
-    color: crimson;
+    color: #edf5e1;
+}
+
+.main-header h1 {
+    padding-left: 5px;
 }
 
 .main-nav {
@@ -31,10 +57,24 @@ header a {
 
 .main-nav a {
     text-decoration: none;
-    color: white;
+    color: #edf5e1;
     flex-direction: row;
     display: block;
-    background-color: darkcyan;
+    background-color: #05386b;
     border-radius: 8px;
     padding: 4px;
+}
+
+.main-nav a:hover {
+    background: #0a5fb3;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+footer {
+    color: #edf5e1 ;
+    background-color: #5cdb95;
+    padding-left: 5px;
+    display: flex;
+    justify-content: space-between;
 }

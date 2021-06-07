@@ -4,7 +4,7 @@
 <h2>
     Edit - {{owner.name}}'s Profile'
 </h2>
-<form action="/owners" method='POST'>
+<form action="/owners/{{owner.id}}" method='POST'>
     <div>
         <label for="name">Owner name:</label>
         <input type="text" name="name" id="name" value="{{owner.name}}">
@@ -22,7 +22,7 @@
         <input type="text" name="postcode" id="postcode" value="{{owner.postcode}}">
     </div>
     <div>
-        <input type="submit" value="Add New owner">
+        <input type="submit" value="Update">
     </div>
 </form>
 

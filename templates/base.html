@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vet Management</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/show_animal.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animal_index.css') }}">
+
 </head>
 <body>
     <header class="main-header">
@@ -27,5 +30,19 @@
     {% block content %}
 
     {% endblock %}
+
+    <footer>
+        <h4>The Vet Helper - Gary Darnell - E49</h4>
+        <nav>
+            <ul class="main-nav">
+                <li><a href="/animals">Display Records</a></li>
+                <li><a href="/animals/new">Create New Record</a></li>
+                <li><a href="/">Search for Record</a></li>
+                <li><a href="/vets">Display All Vets</a></li>
+                <li><a href="/vets/new">Add New Vet</a></li>
+                <li><a href="/owners">Owners List</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 </html>

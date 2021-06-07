@@ -51,6 +51,6 @@ def update_owner(id):
     address = request.form['address']
     postcode = request.form['postcode']
     registered = True
-    new_owner = Owner(name, number, address, postcode, registered)
-    owner_repository.save_owner(new_owner)
+    owner = Owner(name, number, address, postcode, registered, id)
+    owner_repository.update(owner)
     return redirect("/owners")
