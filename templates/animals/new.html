@@ -16,8 +16,14 @@
         <input type="text" name="animal_type" id="animal_type">
     </div>
     <div>
-        <label for="owner_number">Owner's Number:</label>
-        <input type="tel" name="owners_number" id="owners_number">
+        <label for="owner_details">Owner</label>
+        <select name="owner_details" id="owner_details">
+            {% for owner in owners %}
+            <option value="{{owner.id}}">
+                {{owner.name}} - {{owner.number}}
+            </option>
+            {% endfor %}
+        </select>
     </div>
     <div>
         <label for="treatment_notes">Vets initial notes:</label>

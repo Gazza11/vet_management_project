@@ -3,9 +3,11 @@ from flask import Blueprint
 
 from models.animal import Animal
 from models.vet import Vet
+from models.owner import Owner
 
 import repositories.animal_repository as animal_repository
 import repositories.vet_repository as vet_repository
+import repositories.owner_repository as owner_repository
 
 animals_blueprint = Blueprint("animals", __name__)
 
@@ -27,7 +29,8 @@ def show(id):
 @animals_blueprint.route("/animals/new")
 def new_animal():
     vets = vet_repository.select_all_vets()
-    return render_template("animals/new.html", vets = vets)
+    owners = owner_repository.select_all()
+    return render_template("animals/new.html", vets = vets, owners=owners)
 
 
 # Saving new animal record
@@ -36,11 +39,12 @@ def create_animal_record():
     name = request.form["name"]
     date_of_birth = request.form['date_of_birth']
     animal_type = request.form['animal_type']
-    owner_number = request.form['owners_number']
+    owner_id = request.form['owner_details']
+    owner = owner_repository.select_by_id(owner_id)
     treatment_notes = request.form['treatment_notes']
     vet_id = request.form['current_vet_id']
     current_vet = vet_repository.select_by_id(vet_id)
-    new_animal = Animal(name, date_of_birth, animal_type, owner_number, treatment_notes, current_vet)
+    new_animal = Animal(name, date_of_birth, animal_type, owner, treatment_notes, current_vet)
     animal_repository.save_animal(new_animal)
     return redirect("/animals")
 
@@ -57,7 +61,8 @@ def delete_animal(id):
 def edit_animal(id):
     animal = animal_repository.select_by_id(id)
     vets = vet_repository.select_all_vets()
-    return render_template('animals/edit.html', animal=animal, vets=vets)
+    owners = owner_repository.select_all()
+    return render_template('animals/edit.html', animal=animal, vets=vets, owners=owners)
 
 
 # Update animal record
@@ -66,11 +71,12 @@ def update_animal(id):
     name = request.form["name"]
     date_of_birth = request.form['date_of_birth']
     animal_type = request.form['animal_type']
-    owner_number = request.form['owners_number']
+    owner_id = request.form['owner_details']
+    owner = owner.owner_repository.select_by_id(owner_id)
     treatment_notes = request.form['treatment_notes']
     vet_id = request.form['current_vet_id']
     current_vet = vet_repository.select_by_id(vet_id)
-    animal = Animal(name, date_of_birth, animal_type, owner_number, treatment_notes, current_vet, id)
+    animal = Animal(name, date_of_birth, animal_type, owner, treatment_notes, current_vet, id)
     animal_repository.update(animal)
     return redirect("/animals")
 
