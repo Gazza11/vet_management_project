@@ -72,7 +72,7 @@ def update_animal(id):
     date_of_birth = request.form['date_of_birth']
     animal_type = request.form['animal_type']
     owner_id = request.form['owner_details']
-    owner = owner.owner_repository.select_by_id(owner_id)
+    owner = owner_repository.select_by_id(owner_id)
     treatment_notes = request.form['treatment_notes']
     vet_id = request.form['current_vet_id']
     current_vet = vet_repository.select_by_id(vet_id)
