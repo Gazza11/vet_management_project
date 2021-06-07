@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>{{owner.name}}</h3>
+
+<section>
+    <p>Contact Number: {{owner.number}}</p>
+    <p>Address: {{owner.address}}</p>
+    <p>Postcode: {{owner.postcode}}</p>
+    {% if owner.registered == True%}
+        <p>Registered: Yes</p>
+    {% else%}
+        <p>Registered: No</p>
+    {% endif%}
+</section>
+
+{% endblock%}

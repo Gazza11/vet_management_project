@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>
+    Add new Owner
+</h2>
+<form action="/owners" method='POST'>
+    <div>
+        <label for="name">Owner name:</label>
+        <input type="text" name="name" id="name">
+    </div>
+    <div>
+        <label for="number">Contact Number:</label>
+        <input type="text" name="number" id="number">
+    </div>
+    <div>
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address">
+    </div>
+    <div>
+        <label for="postcode"></label>
+        <input type="text" name="postcode" id="postcode">
+    </div>
+    <div>
+        <input type="submit" value="Add New owner">
+    </div>
+</form>
+
+{% endblock %}
