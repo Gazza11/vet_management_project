@@ -1,6 +1,7 @@
 import unittest
 from models.animal import Animal 
 from models.vet import Vet
+from models.owner import Owner
 
 class TestAnimal(unittest.TestCase):
 
@@ -8,8 +9,11 @@ class TestAnimal(unittest.TestCase):
 
         self.vet1 = Vet("Troy", "Barker", "Mon, Tues, Weds, Fri", "06/09/1991")
         self.vet2 = Vet("Karl", "Malone", "Mon, Tues, Weds, Thurs, Fri, Sat", "24/07/1963")
-        self.animal1 = Animal("Garfield", "12/06/2018", "cat", 555679, "Garfield needs to lose 2KG", self.vet1)
-        self.animal2 = Animal("George", "11/02/2011", "monkey", 456722, "George is a curious boy.", self.vet2)
+
+        self.owner1 = Owner("Liam Morrice", 998234, "13 Thistle Drive", "AB34 6WB", True)
+
+        self.animal1 = Animal("Garfield", "12/06/2018", "cat", self.owner1, "Garfield needs to lose 2KG", self.vet1)
+        self.animal2 = Animal("George", "11/02/2011", "monkey", self.owner1, "George is a curious boy.", self.vet2)
 
 
     def test_animal_name(self):
@@ -22,7 +26,16 @@ class TestAnimal(unittest.TestCase):
         self.assertEqual("cat", self.animal1.animal_type)
 
     def test_animal_owner_number(self):
-        self.assertEqual(555679, self.animal1.owner_number)
+        self.assertEqual(998234, self.animal1.owner_details.number)
+
+    def test_animal_owner__name(self):
+        self.assertEqual("Liam Morrice", self.animal1.owner_details.name)
+
+    def test_animal_owner__postcode(self):
+        self.assertEqual("AB34 6WB", self.animal1.owner_details.postcode)
+
+    def test_animal_owner__registered(self):
+        self.assertEqual(True, self.animal1.owner_details.registered)
 
     def test_animal_adding_notes__empty(self):
         self.assertEqual("George is a curious boy.", self.animal2.treatment_notes)

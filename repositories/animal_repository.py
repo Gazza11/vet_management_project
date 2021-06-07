@@ -2,13 +2,15 @@ from db.run_sql import run_sql
 
 from models.animal import Animal
 from models.vet import Vet
+from models.owner import Owner
 
 import repositories.vet_repository as vet_repository
+import repositories.owner_repository as owner_repository
 
 # Create animal profile
 def save_animal(animal):
-    sql = "INSERT INTO animals (name, date_of_birth, animal_type, owner_number, treatment_notes, current_vet_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
-    values = [animal.name, animal.date_of_birth, animal.animal_type, animal.owner_number, animal.treatment_notes, animal.current_vet.id]
+    sql = "INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
+    values = [animal.name, animal.date_of_birth, animal.animal_type, animal.owner_details.id, animal.treatment_notes, animal.current_vet.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     animal.id = id
@@ -24,7 +26,8 @@ def select_all_animals():
 
     for row in results:
         vet = vet_repository.select_by_id(row['current_vet_id'])
-        animal = Animal(row['name'], row['date_of_birth'], row['animal_type'], row['owner_number'], row['treatment_notes'], vet, row['id'])
+        owner = owner_repository.select_by_id(row['owner_details'])
+        animal = Animal(row['name'], row['date_of_birth'], row['animal_type'], owner, row['treatment_notes'], vet, row['id'])
         animals.append(animal)
     return animals
 
@@ -39,7 +42,8 @@ def select_by_id(id):
 
     if results is not None:
         vet = vet_repository.select_by_id(results['current_vet_id'])
-        animal = Animal(results['name'], results['date_of_birth'], results['animal_type'], results['owner_number'], results['treatment_notes'], vet, results['id'])
+        owner = owner_repository.select_by_id(results['owner_details'])
+        animal = Animal(results['name'], results['date_of_birth'], results['animal_type'], owner, results['treatment_notes'], vet, results['id'])
     return animal
 
 

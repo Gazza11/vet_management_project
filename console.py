@@ -7,9 +7,9 @@ import repositories.vet_repository as vet_repository
 import repositories.animal_repository as animal_repository
 import repositories.owner_repository as owner_repository
 
-# animal_repository.delete_all()
-# vet_repository.delete_all()
-# owner_repository.delete_all()
+animal_repository.delete_all()
+vet_repository.delete_all()
+owner_repository.delete_all()
 
 
 vet1 = Vet('Troy', 'Barker', "Mon, Tues", "06/07/1987")
@@ -31,10 +31,12 @@ owner_repository.update(owner1)
 for owner in owner_repository.select_all():
     print(owner.__dict__)
 
-animal1 = Animal('Garfield', "09/09/2009", "cat", 567, "Note 1", vet1)
+animal1 = Animal('Garfield', "09/09/2009", "cat", owner1, "Note 1", vet1)
 animal_repository.save_animal(animal1)
-animal2 = Animal("George", "05/05/2017", "monkey", 9987, "Note2", vet2)
+animal2 = Animal("George", "05/05/2017", "monkey", owner1, "Note2", vet2)
 animal_repository.save_animal(animal2)
+
+
 # animal1.assign_vet(vet2)
 # animal1.add_treatment_notes("George is a curious boy.")
 # animal1.add_treatment_notes("Still curious!!")
@@ -43,7 +45,7 @@ animal_repository.save_animal(animal2)
 # for vet in vet_repository.select_all_vets():
 #     print(vet.__dict__)
 
-# for animal in animal_repository.select_all_animals():
-#     print(animal.__dict__)
+for animal in animal_repository.select_all_animals():
+    print(animal.__dict__)
 
 pdb.set_trace()
