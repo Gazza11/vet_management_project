@@ -5,7 +5,7 @@ class TestOwner(unittest.TestCase):
     
     
     def setUp(self):
-        self.owner1 = Owner("Liam Morrice", 998234, "13 Thistle Drive", "AB34 6WB")
+        self.owner1 = Owner("Liam Morrice", 998234, "13 Thistle Drive", "AB34 6WB", True)
 
     def test_owner_name(self):
         self.assertEqual("Liam Morrice", self.owner1.name)
@@ -18,3 +18,6 @@ class TestOwner(unittest.TestCase):
 
     def test_owner_postcode(self):
         self.assertEqual("AB34 6WB", self.owner1.postcode)
+
+    def test_owner_registered(self):
+        self.assertEqual(True, self.owner1.registered)
