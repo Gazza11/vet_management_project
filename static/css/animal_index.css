@@ -6,6 +6,7 @@
 
 .animal-index div {
     border-top: ridge;
+    border-top-color: #5cdb95;
     margin-bottom: 10px;
     margin-left: 8px;
     margin-right: 8px;

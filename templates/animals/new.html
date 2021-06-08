@@ -2,7 +2,7 @@
 {% block content %}
 <h2>Add New Animal Record</h2>
 
-<form action="/animals" method="POST">
+<form action="/animals" method="POST" class="new-animal">
     <div>
         <label for="name">Name of animal:</label>
         <input type="text" name="name" id="name">
@@ -16,7 +16,7 @@
         <input type="text" name="animal_type" id="animal_type">
     </div>
     <div>
-        <label for="owner_details">Owner</label>
+        <label for="owner_details">Owner:</label>
         <select name="owner_details" id="owner_details">
             {% for owner in owners %}
             <option value="{{owner.id}}">
@@ -24,10 +24,11 @@
             </option>
             {% endfor %}
         </select>
-    </div>
         <button><a href="/owners/new">Add new Owner</a></button>
+    </div>
     <div>
-        <label for="treatment_notes">Vets initial notes:</label>
+        <label for="treatment_notes" class="new-animal-notes">Vets initial notes:</label>
+        <br>
         <textarea name="treatment_notes" id="treatment_notes" cols="20" rows="5"></textarea>
     </div>
     <div>

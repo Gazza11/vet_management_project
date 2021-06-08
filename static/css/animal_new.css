@@ -1,0 +1,14 @@
+.new-animal {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px 50px;
+    padding-bottom: 12px;
+}
+
+.new-animal a {
+    text-decoration: None;
+    color: black;
+}
+
+.new-animal-notes {
+}
