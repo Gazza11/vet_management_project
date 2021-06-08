@@ -52,7 +52,7 @@ animal_repository.save_animal(animal1)
 
 # print(animal1.__dict__)
 # animal1 = animal_repository.select_by_name("Garfield")
-for animal in animal_repository.select_by_name("Garfield"):
+for animal in animal_repository.select_by_type("cat"):
     print(animal.__dict__)
 
 

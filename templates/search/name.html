@@ -1,22 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-<section class="animal-index">
-    <section>
-        <button><a href="/search/name">Search by Name</a></button>
-    </section>
-    <section>
-        <button><a href="/search/type">Search by Type</a></button>
-    </section>
-    <form action="/search" method="POST">
+    
+    <form action="/search/name" method="POST">
         <section>
-            <label for="name">Search by Vet:</label>
+            <label for="name">Search by Name:</label>
             <input type="text" name="name" id="name">
         </section>
         <section>
             <input type="submit" value="Search">
         </section>  
     </form>
-<br>
+    
+    
     <section>
         {% for animal in animals %}
         <div>
@@ -33,5 +28,5 @@
         <br>
             {% endfor %}
     </section>
-</section>
+
 {% endblock %}
