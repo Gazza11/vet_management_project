@@ -97,10 +97,10 @@ def select_by_type(animal_type):
         animals.append(animal)
     return animals
 
-def select_by_type(vet):
+def select_by_vet(vet):
     animals = []
     
-    sql = "SELECT * FROM animals WHERE animal_type = %s"
+    sql = "SELECT * FROM animals WHERE current_vet_id = %s"
     values = [vet]
     results = run_sql(sql, values)
 
