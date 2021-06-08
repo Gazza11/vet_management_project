@@ -1,6 +1,8 @@
 .search-button {
     display: flex;
     justify-content: space-evenly;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 .search-button a {
@@ -11,6 +13,7 @@
     background-color: #05386b;
     border-radius: 8px;
     padding: 4px;
+    font-size: 22px;
 }
 
 .search-button a:hover {
