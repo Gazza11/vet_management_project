@@ -69,14 +69,29 @@ def update(animal):
 
 # Search by animal name
 def select_by_name(name):
+    animals = []
     animal = None
     
     sql = "SELECT * FROM animals WHERE name = %s"
     values = [name]
-    results = run_sql(sql, values)[0]
+    results = run_sql(sql, values)
 
-    if results is not None:
-        vet = vet_repository.select_by_id(results['current_vet_id'])
-        owner = owner_repository.select_by_id(results['owner_details'])
-        animal = Animal(results['name'], results['date_of_birth'], results['animal_type'], owner, results['treatment_notes'], vet, results['id'])
-    return animal
+    for row in results:
+        vet = vet_repository.select_by_id(row['current_vet_id'])
+        owner = owner_repository.select_by_id(row['owner_details'])
+        animal = Animal(row['name'], row['date_of_birth'], row['animal_type'], owner, row['treatment_notes'], vet, row['id'])
+        animals.append(animal)
+    return animals
+        
+
+
+
+
+
+
+    # for result in results:
+    #     if result is not None:
+    #         vet = vet_repository.select_by_id(result['current_vet_id'])
+    #         owner = owner_repository.select_by_id(result['owner_details'])
+    #         animal = Animal(result['name'], result['date_of_birth'], result['animal_type'], owner, result['treatment_notes'], vet, result['id'])
+    #     return animal

@@ -51,8 +51,11 @@ animal_repository.save_animal(animal1)
 # animal1 = animal_repository.search_name("Garfield")
 
 # print(animal1.__dict__)
-animal1 = animal_repository.select_by_name("Garfield")
-print(animal1.__dict__)
+# animal1 = animal_repository.select_by_name("Garfield")
+for animal in animal_repository.select_by_name("Garfield"):
+    print(animal.__dict__)
+
+
 # for searched_animal in animal_repository.search_name("Garfield"):
 #     print(searched_animal.__dict__)
 
