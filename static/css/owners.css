@@ -1,0 +1,14 @@
+.owner-index {
+    color: #05386b;
+}
+
+.owner-index a {
+    text-decoration: None;
+    color: #05386b;
+}
+
+.owner-index a:hover {
+    color: #d9b310;
+    opacity: 0.8;
+    transition: 0.5s;
+}

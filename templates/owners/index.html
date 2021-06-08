@@ -3,9 +3,10 @@
 {% block content %}
 <h1>Animal Owners</h1>
 
-<section>
+<section class="owner-index">
     {% for owner in owners %}
-    <h4><a href="/owners/{{owner.id}}">{{owner.name}}</a></h4>
+    <h3><a href="/owners/{{owner.id}}">{{owner.name}}</a></h3>
+    <p>Contact Number: {{owner.number}}</p>
     {% endfor %}
 </section>
 
