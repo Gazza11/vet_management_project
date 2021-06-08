@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Our Animals</h2>
+
 <section class="animal-index">
-        {% for animal in animals %}
+    {% for animal in animals %}
     <div>
         <h3>{{animal.name}} - Vet: {{animal.current_vet.last_name}}, {{animal.current_vet.first_name}}</h3>
         <section>
@@ -12,9 +12,15 @@
             <p>Owner Name: {{animal.owner_details.name}}</p>
         </section>
         <section>
-            <button><a href="/animals/{{ animal.id }}">View</a></button>
+            <button class="show-animal-button"><a href="/animals/{{ animal.id }}">View</a></button>
         </section>
     </div>
         {% endfor %}
 </section>
-{% endblock %}
+
+<section>
+    <button><a href="/search">Search for Again</a></button>
+</section>
+
+
+{% endblock%}

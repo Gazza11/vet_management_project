@@ -80,3 +80,58 @@ def update_animal(id):
     animal_repository.update(animal)
     return redirect("/animals")
 
+@animals_blueprint.route("/search")
+def search_index():
+    animals = animal_repository.select_all_animals()
+    return render_template("search/index.html", animals=animals)
+
+@animals_blueprint.route("/search/name")
+def search_form():
+    animals = animal_repository.select_all_animals()
+    return render_template("search/name.html", animals=animals)
+
+# Search by name form
+@animals_blueprint.route("/search/name", methods=['POST'])
+def search_by_name():
+    name = request.form["name"]
+    return redirect(f"/search/name/{name}")
+
+# Search by animal name - result
+@animals_blueprint.route("/search/name/<name>")
+def search_by_name_result(name):
+    animals = animal_repository.select_by_name(name)
+    return render_template("search/results.html", animals = animals)
+
+
+
+@animals_blueprint.route("/search/type")
+def search_form_type():
+    animals = animal_repository.select_all_animals()
+    return render_template("search/type.html", animals = animals)
+
+@animals_blueprint.route("/search/type", methods=['POST'])
+def search_by_type():
+    search_type = request.form["search_type"]
+    return redirect(f"/search/type/{search_type}")
+
+@animals_blueprint.route("/search/type/<search_type>")
+def search_by_type_results(search_type):
+    animals = animal_repository.select_by_type(search_type)
+    return render_template("search/results.html", animals=animals)
+
+
+@animals_blueprint.route("/search/vet")
+def search_form_vet():
+    animals = animal_repository.select_all_animals()
+    vets = vet_repository.select_all_vets()
+    return render_template("search/vet.html", animals = animals, vets=vets)
+
+@animals_blueprint.route("/search/vet", methods=['POST'])
+def search_by_vet():
+    vet = request.form["vet"]
+    return redirect(f"/search/vet/{vet}")
+
+@animals_blueprint.route("/search/vet/<vet>")
+def search_by_vet_results(vet):
+    animals = animal_repository.select_by_vet(vet)
+    return render_template("search/results.html", animals = animals)

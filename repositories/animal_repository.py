@@ -65,3 +65,48 @@ def update(animal):
     sql = "UPDATE animals SET (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [animal.name, animal.date_of_birth, animal.animal_type, animal.owner_details.id, animal.treatment_notes, animal.current_vet.id, animal.id]
     run_sql(sql, values)
+
+
+# Search by animal name
+def select_by_name(name):
+    animals = []
+    
+    sql = "SELECT * FROM animals WHERE name = %s"
+    values = [name]
+    results = run_sql(sql, values)
+
+    for row in results:
+        vet = vet_repository.select_by_id(row['current_vet_id'])
+        owner = owner_repository.select_by_id(row['owner_details'])
+        animal = Animal(row['name'], row['date_of_birth'], row['animal_type'], owner, row['treatment_notes'], vet, row['id'])
+        animals.append(animal)
+    return animals
+
+
+def select_by_type(animal_type):
+    animals = []
+    
+    sql = "SELECT * FROM animals WHERE animal_type = %s"
+    values = [animal_type]
+    results = run_sql(sql, values)
+
+    for row in results:
+        vet = vet_repository.select_by_id(row['current_vet_id'])
+        owner = owner_repository.select_by_id(row['owner_details'])
+        animal = Animal(row['name'], row['date_of_birth'], row['animal_type'], owner, row['treatment_notes'], vet, row['id'])
+        animals.append(animal)
+    return animals
+
+def select_by_vet(vet):
+    animals = []
+    
+    sql = "SELECT * FROM animals WHERE current_vet_id = %s"
+    values = [vet]
+    results = run_sql(sql, values)
+
+    for row in results:
+        vet = vet_repository.select_by_id(row['current_vet_id'])
+        owner = owner_repository.select_by_id(row['owner_details'])
+        animal = Animal(row['name'], row['date_of_birth'], row['animal_type'], owner, row['treatment_notes'], vet, row['id'])
+        animals.append(animal)
+    return animals

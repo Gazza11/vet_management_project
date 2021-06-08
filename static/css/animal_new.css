@@ -1,0 +1,29 @@
+.new-animal {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    justify-content: space-evenly;
+}
+
+.new-animal a {
+    text-decoration: None;
+    color: #05386b;
+}
+
+.new-animal {
+    color: #05386b;
+}
+
+.new-animal input {
+    color: #05386b;
+}
+.new-animal div {
+    flex: 0 1 20%;
+    padding: 10px;
+}
+
+.new-animal-button input{
+    color:#05386b;
+    font-size: 15px;
+    margin-bottom: 15px;
+}

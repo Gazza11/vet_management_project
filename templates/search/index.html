@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="animal-index">
+    <section class="search-button">
+        <section>
+            <a href="/search/name">Search by Name</a>
+        </section>
+        <section>
+            <a href="/search/type">Search by Type</a>
+        </section>
+        <section>
+            <a href="/search/vet">Search by Vet</a>
+        </section>
+    </section>
+    <section>
+        {% for animal in animals %}
+        <div>
+            <h3>{{animal.name}} - Vet: {{animal.current_vet.last_name}}, {{animal.current_vet.first_name}}</h3>
+            <section>
+                <p>Type: {{animal.animal_type}}</p>
+                <p>D.o.B: {{animal.date_of_birth}}</p>
+                <p>Owner Name: {{animal.owner_details.name}}</p>
+            </section>
+            <section>
+                <button><a href="/animals/{{ animal.id }}">View</a></button>
+            </section>
+        </div>
+        <br>
+            {% endfor %}
+    </section>
+</section>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <form action="/search/vet" method="POST">
+        <label for="vet">Which vet are they assigned to:</label>
+        <select name="vet" id="vet">
+            {% for vet in vets %}
+            <option value="{{ vet.id }}">
+                {{vet.last_name}}, {{vet.first_name}}
+            </option>
+            {% endfor %}
+        </select>
+        <section>
+            <input type="submit" value="Search">
+        </section>
+    </form>
+    
+    <section>
+        {% for animal in animals %}
+        <div>
+            <h3>{{animal.name}} - Vet: {{animal.current_vet.last_name}}, {{animal.current_vet.first_name}}</h3>
+            <section>
+                <p>Type: {{animal.animal_type}}</p>
+                <p>D.o.B: {{animal.date_of_birth}}</p>
+                <p>Owner Name: {{animal.owner_details.name}}</p>
+            </section>
+            <section>
+                <button><a href="/animals/{{ animal.id }}">View</a></button>
+            </section>
+        </div>
+        <br>
+            {% endfor %}
+    </section>
+</section>
+{% endblock %}

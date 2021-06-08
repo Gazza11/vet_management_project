@@ -6,6 +6,7 @@
 
 .animal-index div {
     border-top: ridge;
+    border-top-color: #05386b;
     margin-bottom: 10px;
     margin-left: 8px;
     margin-right: 8px;
@@ -13,5 +14,21 @@
 
 .animal-index a {
     text-decoration: None;
-    color: black;
+    color: #05386b;
+}
+
+h2 {
+    color: #05386b;
+    font-size: 32px;
+}
+
+.animal-index h3 {
+    color: #05386b;
+    font-size: 24px;
+}
+
+.animal-index p {
+    color: #05386b;
+    font-size: 20px;
+    
 }
