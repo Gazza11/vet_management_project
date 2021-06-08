@@ -1,0 +1,45 @@
+.vet-index h1 {
+    color: #05386b;
+}
+
+.vet-index a {
+    text-decoration: None;
+    color: #05386b;
+}
+
+.grid-vets-index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex: 1 1 33%;
+}
+
+.new-vet {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 12px;
+}
+
+.new-vet div {
+    display: flex;
+}
+
+.vet-edit {
+    color:#05386b;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 15px;
+}
+
+.vet-edit div {
+    flex: 0 1 25%;
+}
+
+.vet-edit input {
+    color:#05386b;
+}
+
+.vet-background {
+    background-image: url(..img/profile_pic_placeholder.png);
+}

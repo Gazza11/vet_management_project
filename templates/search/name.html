@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    
+<section class="animal-index">
     <form action="/search/name" method="POST">
         <section>
             <label for="name">Search by Name:</label>
@@ -28,5 +28,5 @@
         <br>
             {% endfor %}
     </section>
-
+</section>
 {% endblock %}

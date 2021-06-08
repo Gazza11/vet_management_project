@@ -17,7 +17,7 @@
 }
 
 .search-button a:hover {
-    background: #0a5fb3;
+    background: #d9b310;
     opacity: 0.8;
     transition: 0.5s;
 }
@@ -26,4 +26,17 @@
     margin-top: 8px;
     margin-bottom: 8px;
     background: #05386b;
+}
+
+.animal-index form {
+    padding-bottom: 10px;
+    padding-top: 12px;
+    color: #05386b;
+    display: flex;
+    padding-right: 8px;
+}
+
+.animal-index input {
+    color: #05386b;
+    padding-left: 8px;
 }
