@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<section class="animal-index">
-    <form action="/search/name" method="POST">
+<section>
+    <form action="/search/name" method="POST" class="search-vet">
         <section>
             <label for="name">Search by Name:</label>
             <input type="text" name="name" id="name">
@@ -12,7 +12,7 @@
     </form>
     
     
-    <section>
+    <section class="animal-index">
         {% for animal in animals %}
         <div>
             <h3>{{animal.name}} - Vet: {{animal.current_vet.last_name}}, {{animal.current_vet.first_name}}</h3>

@@ -40,3 +40,16 @@
     color: #05386b;
     padding-left: 8px;
 }
+
+.search-vet {
+    margin-bottom: 15px;
+}
+
+.search-vet label {
+    color:#05386b;
+    font-size: 20px;
+}
+
+.search-vet input{
+    margin-top: 10px;
+}

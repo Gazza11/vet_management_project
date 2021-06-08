@@ -2,22 +2,22 @@
 
 {% block content %}
 <h2>{{vet.last_name}}, {{vet.first_name}}</h2>
+<section class="vet-view">
+    <section>
+        <p>Works on: {{vet.working_days}}</p>
+        <p>D.o.B: {{vet.date_of_birth}}</p>
+    </section>
 
-<section>
-    <p>Works on: {{vet.working_days}}</p>
-    <p>D.o.B: {{vet.date_of_birth}}</p>
+    <section>
+        <form action="/vets/{{vet.id}}/edit">
+            <input type="submit" value="Edit">
+        </form>
+    </section>
+
+    <section>
+        <form action="/vets/{{ vet.id }}/delete" method="POST">
+            <input type="submit" value="Delete">
+        </form>
+    </section>
 </section>
-
-<section>
-    <form action="/vets/{{vet.id}}/edit">
-        <input type="submit" value="Edit">
-    </form>
-</section>
-
-<section>
-    <form action="/vets/{{ vet.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    </form>
-</section>
-
 {% endblock %}

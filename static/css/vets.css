@@ -58,3 +58,13 @@
 .vet-background {
     background-image: url(..img/profile_pic_placeholder.png);
 }
+
+.vet-view p{
+    color:#05386b;
+    font-size: 20px;
+}
+
+.vet-view input {
+    color:#05386b;
+    margin-bottom: 10px;
+}

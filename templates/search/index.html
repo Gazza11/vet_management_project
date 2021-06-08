@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<section class="animal-index">
+<section>
     <section class="search-button">
         <section>
             <a href="/search/name">Search by Name</a>
@@ -12,7 +12,7 @@
             <a href="/search/vet">Search by Vet</a>
         </section>
     </section>
-    <section>
+    <section class="animal-index">
         {% for animal in animals %}
         <div>
             <h3>{{animal.name}} - Vet: {{animal.current_vet.last_name}}, {{animal.current_vet.first_name}}</h3>

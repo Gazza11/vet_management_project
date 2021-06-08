@@ -1,6 +1,7 @@
 .animal-index {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 
@@ -10,6 +11,7 @@
     margin-bottom: 10px;
     margin-left: 8px;
     margin-right: 8px;
+    flex: 1 0 30%;
 }
 
 .animal-index a {

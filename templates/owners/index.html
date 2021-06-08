@@ -5,8 +5,10 @@
 
 <section class="owner-index">
     {% for owner in owners %}
-    <h3><a href="/owners/{{owner.id}}">{{owner.name}}</a></h3>
-    <p>Contact Number: {{owner.number}}</p>
+    <section>
+        <h3><a href="/owners/{{owner.id}}">{{owner.name}}</a></h3>
+        <p>Contact Number: {{owner.number}}</p>
+    </section>
     {% endfor %}
 </section>
 
