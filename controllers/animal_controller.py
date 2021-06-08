@@ -111,7 +111,7 @@ def search_form_type():
 
 @animals_blueprint.route("/search/type", methods=['POST'])
 def search_by_type():
-    search_type = request.form("search_type")
+    search_type = request.form["search_type"]
     return redirect(f"/search/type/{search_type}")
 
 @animals_blueprint.route("/search/type/<search_type>")

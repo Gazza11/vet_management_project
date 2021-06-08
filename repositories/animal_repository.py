@@ -83,11 +83,25 @@ def select_by_name(name):
     return animals
 
 
-def select_by_type(search_type):
+def select_by_type(animal_type):
     animals = []
     
     sql = "SELECT * FROM animals WHERE animal_type = %s"
-    values = [search_type]
+    values = [animal_type]
+    results = run_sql(sql, values)
+
+    for row in results:
+        vet = vet_repository.select_by_id(row['current_vet_id'])
+        owner = owner_repository.select_by_id(row['owner_details'])
+        animal = Animal(row['name'], row['date_of_birth'], row['animal_type'], owner, row['treatment_notes'], vet, row['id'])
+        animals.append(animal)
+    return animals
+
+def select_by_type(vet):
+    animals = []
+    
+    sql = "SELECT * FROM animals WHERE animal_type = %s"
+    values = [vet]
     results = run_sql(sql, values)
 
     for row in results:
