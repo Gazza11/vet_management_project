@@ -119,3 +119,19 @@ def search_by_type_results(search_type):
     animals = animal_repository.select_by_type(search_type)
     return render_template("search/results.html", animals=animals)
 
+
+@animals_blueprint.route("/search/vet")
+def search_form_vet():
+    animals = animal_repository.select_all_animals()
+    vets = vet_repository.select_all_vets()
+    return render_template("search/vet.html", animals = animals, vets=vets)
+
+@animals_blueprint.route("/search/vet", methods=['POST'])
+def search_by_vet():
+    vet = request.form["vet"]
+    return redirect(f"/search/vet/{vet}")
+
+@animals_blueprint.route("/search/vet/<vet>")
+def search_by_vet_results(vet):
+    animals = animal_repository.select_by_vet(vet)
+    return render_template("search/results.html", animals = animals)

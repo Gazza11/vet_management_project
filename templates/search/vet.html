@@ -1,16 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
-<section class="animal-index">
-    <section>
-        <button><a href="/search/name">Search by Name</a></button>
-    </section>
-    <section>
-        <button><a href="/search/type">Search by Type</a></button>
-    </section>
-    <section>
-        <button><a href="/search/vet">Search by Vet</a></button>
-    </section>
-<br>
+<section>
+    <form action="/search/vet" method="POST">
+        <label for="vet">Which vet are they assigned to:</label>
+        <select name="vet" id="vet">
+            {% for vet in vets %}
+            <option value="{{ vet.id }}">
+                {{vet.last_name}}, {{vet.first_name}}
+            </option>
+            {% endfor %}
+        </select>
+        <section>
+            <input type="submit" value="Search">
+        </section>
+    </form>
+    
     <section>
         {% for animal in animals %}
         <div>
