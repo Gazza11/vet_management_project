@@ -31,6 +31,7 @@ body form {
     font-size: larger;
     background-color: #5cdb95;
     margin: 0px;
+    color: #05386b;
 }
 
 header a {
@@ -40,6 +41,7 @@ header a {
 
 .main-header h1 {
     padding-left: 5px;
+    color: #05386b;
 }
 
 .main-nav {

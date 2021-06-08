@@ -7,8 +7,13 @@
 
 .new-animal a {
     text-decoration: None;
-    color: black;
+    color: #05386b;
 }
 
-.new-animal-notes {
+.new-animal {
+    color: #05386b;
+}
+
+.new-animal input {
+    color: #05386b;
 }

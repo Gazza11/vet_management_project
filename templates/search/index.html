@@ -1,16 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 <section class="animal-index">
-    <section>
-        <button><a href="/search/name">Search by Name</a></button>
+    <section class="search-button">
+        <section>
+            <a href="/search/name">Search by Name</a>
+        </section>
+        <section>
+            <a href="/search/type">Search by Type</a>
+        </section>
+        <section>
+            <a href="/search/vet">Search by Vet</a>
+        </section>
     </section>
-    <section>
-        <button><a href="/search/type">Search by Type</a></button>
-    </section>
-    <section>
-        <button><a href="/search/vet">Search by Vet</a></button>
-    </section>
-<br>
     <section>
         {% for animal in animals %}
         <div>
