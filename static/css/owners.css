@@ -20,3 +20,11 @@
 .owner-index section {
     flex: 1 0 33%;
 }
+
+.owner-details {
+    color: #05386b;
+}
+
+.owner-details h2 {
+    text-decoration: underline;
+}

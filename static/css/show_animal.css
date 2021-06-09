@@ -53,3 +53,8 @@
 .show-animal-button h3 {
     margin-top: 0px;
 }
+
+.treatment-notes h3{
+    text-decoration: underline;
+
+}

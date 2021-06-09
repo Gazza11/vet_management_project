@@ -1,0 +1,14 @@
+.animal-edit {
+    display: flex;
+    flex-flow: wrap row;
+    color: #05386b;
+}
+
+.animal-edit div{
+    flex: 1 0 30%;
+    padding-bottom: 15px;
+}
+
+.animal-edit * input {
+    
+}

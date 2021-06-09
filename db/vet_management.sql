@@ -50,13 +50,13 @@ INSERT INTO owners (name, number, address, postcode, registered) VALUES ('Marcus
 INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Garfield', '2019-08-07', 'cat', 1, 'Garfield needs to lose weight.', 1);
 INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('George', '2020-07-14', 'monkey', 2, 'George is very Curious.', 1);
 INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Gregor', '2008-03-02', 'dog', 4, 'Gregor needs a course of anti-biotics.', 2);
-INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Silvester', '2009-03-02', 'cat', 3, 'Obsesses with mice.', 4);
+INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Silvester', '2009-03-02', 'cat', 3, 'Obsessed with mice.', 4);
 INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Emily', '2009-03-02', 'cat', 3, 'In good health.', 5);
 INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Ol Yella', '1999-03-02', 'dog', 1, 'Does not look good', 1);
-INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Emily', '2009-03-02', 'cat', 3, 'In good health.', 1);
-INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Emily', '2009-03-02', 'cat', 3, 'In good health.', 1);
-INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Emily', '2009-03-02', 'cat', 3, 'In good health.', 1);
-INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Emily', '2009-03-02', 'cat', 3, 'In good health.', 1);
+INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Woody', '2003-03-02', 'dog', 6, 'Chases his tail too much.', 2);
+INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Buzz', '2003-12-02', 'dog', 6, 'Space Cadet.', 1);
+INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Thumper', '2011-03-02', 'rabbit', 3, 'In good health.', 7);
+INSERT INTO animals (name, date_of_birth, animal_type, owner_details, treatment_notes, current_vet_id) VALUES ('Tiny', '2009-03-02', 'Guinea Pig', 5, 'Has a temper.', 6);
 
 
 -- SELECT * FROM vets;

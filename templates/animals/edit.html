@@ -2,51 +2,52 @@
 {% block content %}
 
 <h2>Update {{ animal.name}}'s Record</h2>
-
-<form action="/animals/{{ animal.id }}" method="POST">
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" value="{{ animal.name}}">
-    </div>
-    <div>
-        <label for="date_of_birth">Date of birth:</label>
-        <input type="date" name="date_of_birth" id="date_of_birth" value="{{animal.date_of_birth}}">
-    </div>
-    <div>
-        <label for="animal_type">Type of animal:</label>
-        <input type="text" name="animal_type" id="animal_type" value="{{ animal.animal_type }}">
-    </div>
-    <div>
-        <label for="owner_details">Owner:</label>
-        <select name="owner_details" id="owner_details">
-            <option value="{{animal.owner_details.id}}">
-                {{animal.owner_details.name}} - {{animal.owner_details.number}}
-            </option>
-            {% for owner in owners%}
-            <option value="{{ owner.id }}">
-                {{owner.name}} - {{owner.number}}
-            </option>
-            {% endfor %}
-        </select>
-    </div>
-    <div>
-        <label for="treatment_notes">Vets notes:</label>
-        <textarea name="treatment_notes" id="treatment_notes" cols="30" rows="10">{{animal.treatment_notes}}</textarea>
-    </div>
-    <div>
-        <label for="current_vet">Which vet are they assigned to:</label>
-        <select name="current_vet_id" id="current_vet">
-            <option value="{{animal.current_vet.id}}">{{animal.current_vet.last_name}}, {{animal.current_vet.first_name}}</option>
-            {% for vet in vets %}
-            <option value="{{ vet.id }}">
-                {{vet.last_name}}, {{vet.first_name}}
-            </option>
-            {% endfor %}
-        </select>
-    </div>
-    <div>
-        <input type="submit" value="Update">
-    </div>
-</form>
-
+<section>
+    <form action="/animals/{{ animal.id }}" method="POST"  class="animal-edit">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="{{ animal.name}}">
+        </div>
+        <div>
+            <label for="date_of_birth">Date of birth:</label>
+            <input type="date" name="date_of_birth" id="date_of_birth" value="{{animal.date_of_birth}}">
+        </div>
+        <div>
+            <label for="animal_type">Type of animal:</label>
+            <input type="text" name="animal_type" id="animal_type" value="{{ animal.animal_type }}">
+        </div>
+        <div>
+            <label for="owner_details">Owner:</label>
+            <select name="owner_details" id="owner_details">
+                <option value="{{animal.owner_details.id}}">
+                    {{animal.owner_details.name}} - {{animal.owner_details.number}}
+                </option>
+                {% for owner in owners%}
+                <option value="{{ owner.id }}">
+                    {{owner.name}} - {{owner.number}}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="treatment_notes">Vets notes:</label>
+            <br>
+            <textarea name="treatment_notes" id="treatment_notes" cols="30" rows="10">{{animal.treatment_notes}}</textarea>
+        </div>
+        <div>
+            <label for="current_vet">Which vet are they assigned to:</label>
+            <select name="current_vet_id" id="current_vet">
+                <option value="{{animal.current_vet.id}}">{{animal.current_vet.last_name}}, {{animal.current_vet.first_name}}</option>
+                {% for vet in vets %}
+                <option value="{{ vet.id }}">
+                    {{vet.last_name}}, {{vet.first_name}}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Update">
+        </div>
+    </form>
+</section>
 {% endblock %}
