@@ -20,6 +20,7 @@
     background: #d9b310;
     opacity: 0.8;
     transition: 0.5s;
+    color: #05386b;
 }
 
 .search-button button {
@@ -52,4 +53,13 @@
 
 .search-vet input{
     margin-top: 10px;
+}
+
+.failed-search {
+    display: flex;
+    justify-content: space-around;
+}
+
+.failed-search section {
+
 }

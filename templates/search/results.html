@@ -20,6 +20,11 @@
         </section>
     </div>
         {% endfor %}
+    <section>
+        {% if animals == [] %}
+        <h3>There were no seaerch results that matched that criteria. Please try again.</h3>
+    </section>
+    {% endif %}
 </section>
 
 
