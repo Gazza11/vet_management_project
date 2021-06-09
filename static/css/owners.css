@@ -46,3 +46,21 @@
     margin-left: 8px;
     font-size: 28px;
 }
+
+.owner-edit {
+    color: #05386b;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.owner-edit div {
+    font-size: 28px;
+    padding-left: 8px;
+    padding-bottom: 20px;
+}
+
+.owner-edit-submit {
+    padding-bottom: 10px;
+    padding-left: 8px;
+}
