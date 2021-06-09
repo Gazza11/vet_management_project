@@ -6,7 +6,7 @@
     <section class="grid-vets-index">
         {% for vet in vets %}
         <section>
-        <img src=".img/profile_pic_placeholder.png" alt="profile_picture">
+        <img src="static/img/profile_pic_placeholder.png" alt="profile_picture">
         <h4><a href="/vets/{{ vet.id }}">{{vet.last_name}}, {{vet.first_name}}</a></h4>
         </section>
         {% endfor %}
