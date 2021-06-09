@@ -9,25 +9,22 @@
 <section class="animal-index">
     {% for animal in animals %}
     <div>
-        <h3>{{animal.name}} - Vet: {{animal.current_vet.last_name}}, {{animal.current_vet.first_name}}</h3>
-        <section>
-            <p>Type: {{animal.animal_type}}</p>
-            <p>D.o.B: {{animal.date_of_birth}}</p>
-            <p>Owner Name: {{animal.owner_details.name}}</p>
-        </section>
-        <section>
-            <button class="show-animal-button"><a href="/animals/{{ animal.id }}">View</a></button>
-        </section>
+    <h3>{{animal.name}} - Vet: {{animal.current_vet.last_name}}, {{animal.current_vet.first_name}}</h3>
+    <section>
+        <p>Type: {{animal.animal_type}}</p>
+        <p>D.o.B: {{animal.date_of_birth}}</p>
+        <p>Owner Name: {{animal.owner_details.name}}</p>
+    </section>
+    <section>
+        <button class="show-animal-button"><a href="/animals/{{ animal.id }}">View</a></button>
+    </section>
     </div>
         {% endfor %}
-    <section>
+    <section class="failed-search">
         {% if animals == [] %}
-        <h3>There were no seaerch results that matched that criteria. Please try again.</h3>
+        <h3>There were no search results that matched that criteria. Please try again.</h3>
     </section>
     {% endif %}
 </section>
 
-
-
-
-{% endblock%}
+{% endblock %}

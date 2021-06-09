@@ -35,19 +35,9 @@ body form {
     font-size: larger;
     background: -webkit-linear-gradient(110deg, #0b3c5d 40%, #1d2731 60%);
     margin: 0px;
-    min-height: 45px;
 }
 
-.sticky {
-    position: fixed;
-    top:0;
-    width: 100%;
 
-}
-
-.sticky + .main-header{
-    padding-top: 20px;
-}
 header a {
     text-decoration: none;
     color: #d9b310;
@@ -101,6 +91,7 @@ footer {
     padding-left: 5px;
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .welcome-text {

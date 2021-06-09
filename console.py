@@ -7,6 +7,8 @@ import repositories.vet_repository as vet_repository
 import repositories.animal_repository as animal_repository
 import repositories.owner_repository as owner_repository
 
+
+NOT TO BE RUN -- ALL SEED DATA IN vet_management
 # animal_repository.delete_all()
 # vet_repository.delete_all()
 # owner_repository.delete_all()

@@ -33,12 +33,12 @@
     color: #05386b;
 }
 
-.new-vet div {
-    display: flex;
-}
-
 .new-vet input {
     color: #05386b;
+}
+
+.new-vet label {
+    font-size: 28px;
 }
 
 .vet-edit {
