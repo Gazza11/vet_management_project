@@ -17,6 +17,7 @@
 .grid-vets-index a {
     text-decoration: None;
     color: #05386b;
+    margin-left: 10px;
 }
 .grid-vets-index a:hover {
     color: #d9b310;

@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<br>
+<section class="search-button">
+    <a href="/search">Search Again</a>
+</section>
+<br>
 <section class="animal-index">
     {% for animal in animals %}
     <div>
@@ -18,9 +22,7 @@
         {% endfor %}
 </section>
 
-<section>
-    <button><a href="/search">Search Again</a></button>
-</section>
+
 
 
 {% endblock%}
