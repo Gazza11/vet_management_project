@@ -9,6 +9,14 @@
     padding-bottom: 15px;
 }
 
-.animal-edit * input {
-    
+.animal-edit * input{
+    color: #05386b;
+}
+
+.animal-edit * textarea {
+    color: #05386b;
+}
+
+.animal-edit * select {
+    color: #05386b;
 }

@@ -28,3 +28,20 @@
 .owner-details h2 {
     text-decoration: underline;
 }
+
+.new-owner {
+    display: flex;
+    color:#05386b;
+
+}
+.new-owner div {
+    color: #05386b;
+    margin: 10px;
+    flex: 1 1 25%;
+    font-size: 28px;
+}
+
+.new-owner-submit {
+    margin-bottom: 10px;
+    font-size: 28px;
+}
